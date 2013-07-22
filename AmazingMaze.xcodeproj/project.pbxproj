@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A651912179DA4FD0034A076 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A651911179DA4FD0034A076 /* SpriteKit.framework */; };
+		5A651913179DA6B10034A076 /* MazeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A651910179DA4980034A076 /* MazeScene.m */; };
 		5AEF619F179D9EF0005EC254 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEF619E179D9EF0005EC254 /* UIKit.framework */; };
 		5AEF61A1179D9EF0005EC254 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEF61A0179D9EF0005EC254 /* Foundation.framework */; };
 		5AEF61A3179D9EF0005EC254 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEF61A2179D9EF0005EC254 /* CoreGraphics.framework */; };
@@ -21,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A65190F179DA4980034A076 /* MazeScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MazeScene.h; sourceTree = "<group>"; };
+		5A651910179DA4980034A076 /* MazeScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MazeScene.m; sourceTree = "<group>"; };
+		5A651911179DA4FD0034A076 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		5AEF619B179D9EF0005EC254 /* AmazingMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AEF619E179D9EF0005EC254 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5AEF61A0179D9EF0005EC254 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A651912179DA4FD0034A076 /* SpriteKit.framework in Frameworks */,
 				5AEF619F179D9EF0005EC254 /* UIKit.framework in Frameworks */,
 				5AEF61A1179D9EF0005EC254 /* Foundation.framework in Frameworks */,
 				5AEF61A3179D9EF0005EC254 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +79,7 @@
 		5AEF619D179D9EF0005EC254 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A651911179DA4FD0034A076 /* SpriteKit.framework */,
 				5AEF619E179D9EF0005EC254 /* UIKit.framework */,
 				5AEF61A0179D9EF0005EC254 /* Foundation.framework */,
 				5AEF61A2179D9EF0005EC254 /* CoreGraphics.framework */,
@@ -88,6 +95,8 @@
 				5AEF61B6179D9EF0005EC254 /* MainStoryboard.storyboard */,
 				5AEF61B9179D9EF0005EC254 /* MAPViewController.h */,
 				5AEF61BA179D9EF0005EC254 /* MAPViewController.m */,
+				5A65190F179DA4980034A076 /* MazeScene.h */,
+				5A651910179DA4980034A076 /* MazeScene.m */,
 				5AEF61A5179D9EF0005EC254 /* Supporting Files */,
 			);
 			path = AmazingMaze;
@@ -174,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A651913179DA6B10034A076 /* MazeScene.m in Sources */,
 				5AEF61AB179D9EF0005EC254 /* main.m in Sources */,
 				5AEF61AF179D9EF0005EC254 /* MAPAppDelegate.m in Sources */,
 				5AEF61BB179D9EF0005EC254 /* MAPViewController.m in Sources */,
@@ -264,6 +274,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AmazingMaze/AmazingMaze-Prefix.pch";
 				INFOPLIST_FILE = "AmazingMaze/AmazingMaze-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -275,6 +286,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AmazingMaze/AmazingMaze-Prefix.pch";
 				INFOPLIST_FILE = "AmazingMaze/AmazingMaze-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -299,6 +311,7 @@
 				5AEF61C0179D9EF0005EC254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
