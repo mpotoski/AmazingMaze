@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142BA29C179EF393002AD539 /* spikes.png in Resources */ = {isa = PBXBuildFile; fileRef = 142BA29B179EF393002AD539 /* spikes.png */; };
+		142BA29E179EF55E002AD539 /* platform.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 142BA29D179EF55E002AD539 /* platform.jpg */; };
+		142BA2A0179EF5FD002AD539 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 142BA29F179EF5FD002AD539 /* ball.png */; };
+		142BA2A2179EF7B3002AD539 /* bucket.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 142BA2A1179EF7B3002AD539 /* bucket.jpg */; };
 		5A651912179DA4FD0034A076 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A651911179DA4FD0034A076 /* SpriteKit.framework */; };
 		5A651913179DA6B10034A076 /* MazeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A651910179DA4980034A076 /* MazeScene.m */; };
 		5AEF619F179D9EF0005EC254 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEF619E179D9EF0005EC254 /* UIKit.framework */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142BA29B179EF393002AD539 /* spikes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spikes.png; sourceTree = "<group>"; };
+		142BA29D179EF55E002AD539 /* platform.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = platform.jpg; sourceTree = "<group>"; };
+		142BA29F179EF5FD002AD539 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		142BA2A1179EF7B3002AD539 /* bucket.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bucket.jpg; sourceTree = "<group>"; };
 		5A65190F179DA4980034A076 /* MazeScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MazeScene.h; sourceTree = "<group>"; };
 		5A651910179DA4980034A076 /* MazeScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MazeScene.m; sourceTree = "<group>"; };
 		5A651911179DA4FD0034A076 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
@@ -65,6 +73,10 @@
 				5AEF61A4179D9EF0005EC254 /* AmazingMaze */,
 				5AEF619D179D9EF0005EC254 /* Frameworks */,
 				5AEF619C179D9EF0005EC254 /* Products */,
+				142BA29B179EF393002AD539 /* spikes.png */,
+				142BA29D179EF55E002AD539 /* platform.jpg */,
+				142BA29F179EF5FD002AD539 /* ball.png */,
+				142BA2A1179EF7B3002AD539 /* bucket.jpg */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,10 +180,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142BA29C179EF393002AD539 /* spikes.png in Resources */,
 				5AEF61A9179D9EF0005EC254 /* InfoPlist.strings in Resources */,
+				142BA29E179EF55E002AD539 /* platform.jpg in Resources */,
 				5AEF61B1179D9EF0005EC254 /* Default.png in Resources */,
 				5AEF61B3179D9EF0005EC254 /* Default@2x.png in Resources */,
 				5AEF61B5179D9EF0005EC254 /* Default-568h@2x.png in Resources */,
+				142BA2A2179EF7B3002AD539 /* bucket.jpg in Resources */,
+				142BA2A0179EF5FD002AD539 /* ball.png in Resources */,
 				5AEF61B8179D9EF0005EC254 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
