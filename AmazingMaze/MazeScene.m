@@ -16,6 +16,7 @@ const uint32_t SPIKES   = 0x1 << 3;
 @interface MazeScene ()
 @property BOOL contentCreated;
 @property int score;
+@property int highScore;
 @end
 
 @implementation MazeScene
@@ -36,9 +37,11 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     self.physicsWorld.contactDelegate = self;
     self.physicsWorld.gravity = CGPointMake(0, -5);
     self.score = 0;
+    self.highScore = 0;
     [self makeBucket];
     [self makeSpikes];
     [self makeScoreLabel];
+    [self makeHighScoreLabel];
     SKAction *makePlatforms = [SKAction sequence:@[
                                                    [SKAction performSelector:@selector(makePlatform) onTarget:self],
                                                    [SKAction waitForDuration:0.3]]];
@@ -66,6 +69,16 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     [self addChild:scoreLabel];
 }
 
+- (void)makeHighScoreLabel {
+    SKLabelNode *highScoreLabel = [[SKLabelNode alloc] init];
+    highScoreLabel.text = @"High Score: 0";
+    highScoreLabel.fontSize = 18;
+    highScoreLabel.fontColor = [SKColor blackColor];
+    highScoreLabel.position = CGPointMake(self.size.width - 75, self.size.height - 50);
+    highScoreLabel.name = @"highScore";
+    [self addChild:highScoreLabel];
+}
+
 - (void)makePlatform {
     int random = arc4random() % 2;
     if (random == 0) [self makeLeftPlatform];
@@ -73,9 +86,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 }
 
 - (void)makeRightPlatform {
-    SKSpriteNode *platform = [[SKSpriteNode alloc] initWithColor:[SKColor blueColor] size:CGSizeMake(80, 10)];
-    platform.position = CGPointMake(self.size.width, skRand(100, self.size.height - 100));
-    platform.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:platform.size];
+    SKSpriteNode *platform = [[SKSpriteNode alloc] initWithImageNamed:@"platform.jpg"];
+    [platform setSize:CGSizeMake(80, 10)];    platform.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:platform.size];
     platform.physicsBody.dynamic = NO;
     float duration = skRand(1.0, 4.0);
     SKAction *moveLeft = [SKAction moveByX:-600.0 y:0 duration:duration];
@@ -88,7 +100,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 }
 
 - (void)makeLeftPlatform {
-    SKSpriteNode *platform = [[SKSpriteNode alloc] initWithColor:[SKColor blueColor] size:CGSizeMake(80, 10)];
+    SKSpriteNode *platform = [[SKSpriteNode alloc] initWithImageNamed:@"platform.jpg"];
+    [platform setSize:CGSizeMake(80, 10)];
     platform.position = CGPointMake(0, skRand(100, self.size.height - 100));
     platform.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:platform.size];
     platform.physicsBody.dynamic = NO;
@@ -103,7 +116,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 }
 
 - (void)makeBall {
-    SKSpriteNode *ball = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(12, 12)];
+    SKSpriteNode *ball = [[SKSpriteNode alloc] initWithImageNamed:@"ball.png"];
+    [ball setSize:CGSizeMake(12, 12)];
     ball.position = CGPointMake(skRand(80, self.size.width - 80), self.size.height);
     ball.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:ball.size];
     ball.physicsBody.categoryBitMask = BALL;
@@ -114,7 +128,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 }
 
 - (void)makeBucket {
-    SKSpriteNode *bucket = [[SKSpriteNode alloc] initWithColor:[SKColor greenColor] size:CGSizeMake(30, 20)];
+    SKSpriteNode *bucket = [[SKSpriteNode alloc] initWithImageNamed:@"bucket.jpg"];
+    [bucket setSize:CGSizeMake(30, 20)];
     bucket.position = CGPointMake((self.size.width / 2), bucket.size.height / 2);
     bucket.name = @"bucket";
     bucket.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bucket.size];
@@ -126,7 +141,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 }
 
 - (void)makeSpikes {
-    SKSpriteNode *spikes = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(145, 20)];
+    SKSpriteNode *spikes = [[SKSpriteNode alloc] initWithImageNamed:@"spikes.png"];
+    [spikes setSize:CGSizeMake(145, 20)];
     spikes.position = CGPointMake(spikes.size.width / 2, spikes.size.height / 2);
     spikes.name = @"spikes";
     spikes.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:spikes.size];
@@ -135,7 +151,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     spikes.physicsBody.collisionBitMask = BALL;
     spikes.physicsBody.contactTestBitMask = BALL;
     [self addChild:spikes];
-    spikes = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(145, 20)];
+    spikes = [[SKSpriteNode alloc] initWithImageNamed:@"spikes.png"];
+    [spikes setSize:CGSizeMake(145, 20)];
     spikes.position = CGPointMake(self.size.width - spikes.size.width / 2, spikes.size.height / 2);
     spikes.name = @"spikes";
     spikes.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:spikes.size];
@@ -197,6 +214,11 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 }
 
 - (void)downScore {
+    if (self.score > self.highScore) {
+        [self setHighScore: self.score];
+        SKLabelNode *highScoreLabel = (SKLabelNode *)[self childNodeWithName:@"highScore"];
+        highScoreLabel.text = [NSString stringWithFormat:@"High Score: %i", self.score];
+    }
     self.score--;
     SKLabelNode *scoreLabel = (SKLabelNode *)[self childNodeWithName:@"score"];
     scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.score];

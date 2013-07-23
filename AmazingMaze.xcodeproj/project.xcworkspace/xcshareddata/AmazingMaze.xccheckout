@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>861B9884-6FD1-4022-A23B-983C5CECB592</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AmazingMaze</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C39022FF-E5EF-4DE7-A113-4921A98FD042</key>
+		<string>https://github.com/mpotoski/AmazingMaze.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AmazingMaze.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C39022FF-E5EF-4DE7-A113-4921A98FD042</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mpotoski/AmazingMaze.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C39022FF-E5EF-4DE7-A113-4921A98FD042</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C39022FF-E5EF-4DE7-A113-4921A98FD042</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AmazingMaze</string>
+		</dict>
+	</array>
+</dict>
+</plist>
